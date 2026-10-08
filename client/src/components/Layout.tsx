@@ -11,10 +11,10 @@ export function Layout({ children }: { children: ReactNode }) {
     <div className="min-h-screen bg-gradient-mesh flex flex-col font-sans">
       <header className="w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between z-10">
         <Link href="/" className="flex items-center gap-2 group cursor-pointer">
-          <div className="bg-primary/10 p-2 rounded-xl group-hover:bg-primary/20 transition-colors">
-            <Heart className="w-6 h-6 text-primary fill-primary" />
+          <div className="bg-[#2563EB]/10 p-2 rounded-xl group-hover:bg-[#2563EB]/20 transition-colors">
+            <Heart className="w-6 h-6 text-[#2563EB] fill-[#2563EB]" />
           </div>
-          <span className="font-display font-bold text-2xl text-foreground tracking-tight">
+          <span className="font-display font-bold text-2xl text-[#2563EB] tracking-tight">
             VocalVizz
           </span>
         </Link>

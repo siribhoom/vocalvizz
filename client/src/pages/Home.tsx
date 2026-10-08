@@ -21,8 +21,8 @@ export default function Home() {
             <span className="text-sm font-medium text-foreground/80">AI-Powered Personalized Messages</span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-foreground leading-[1.1]">
-            Vocal<span className="text-primary">Vizz</span>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-[#2563EB] leading-[1.1]">
+            VocalVizz
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground font-medium max-w-xl mx-auto">
