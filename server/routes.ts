@@ -18,7 +18,7 @@ if (!fs.existsSync(UPLOADS_DIR)) {
 const upload = multer({
   storage: multer.diskStorage({
     destination: UPLOADS_DIR,
-    filename: (req, file, cb) => {
+    filename: (_req: any, file: any, cb: any) => {
       const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
       cb(null, file.fieldname + "-" + uniqueSuffix + path.extname(file.originalname));
     },
@@ -35,11 +35,11 @@ export async function registerRoutes(
   app.post(
     "/api/projects",
     upload.fields([{ name: "image" }, { name: "audio" }]),
-    async (req, res) => {
+    async (req: any, res) => {
       try {
-        const files = req.files as { [fieldname: string]: Express.Multer.File[] };
-        const imageFile = files["image"]?.[0];
-        const audioFile = files["audio"]?.[0]; // User provided audio (simulation)
+        const files = req.files as { [fieldname: string]: Express.Multer.File[] } | undefined;
+        const imageFile = files?.["image"]?.[0];
+        const audioFile = files?.["audio"]?.[0]; // User provided audio (simulation)
 
         if (!imageFile || !audioFile) {
           return res.status(400).json({ message: "Missing image or audio file" });
@@ -52,7 +52,6 @@ export async function registerRoutes(
           audioUrl: `/uploads/${audioFile.filename}`,
           contentType,
           topic,
-          status: "pending",
         });
 
         // Trigger background processing

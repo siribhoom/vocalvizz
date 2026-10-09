@@ -1,0 +1,8 @@
+{
+  "name": "VocalVizz",
+  "description": "AI-powered personalized messages, bedtime stories, rhymes, and videos for children with voice and photo personalization.",
+  "prompt": "VocalVizz personalized story and video generator for kids",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

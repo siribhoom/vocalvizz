@@ -38,7 +38,7 @@ export async function createVideo(imagePath: string, audioPath: string, text: st
         console.log('Video generation finished:', publicUrl);
         resolve(publicUrl);
       })
-      .on('error', (err) => {
+      .on('error', (err: any) => {
         console.error('FFmpeg error:', err);
         reject(err);
       });

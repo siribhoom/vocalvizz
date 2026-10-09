@@ -15,9 +15,10 @@ export function useProject(id: number) {
       return await res.json() as Project;
     },
     // Poll every 2 seconds if status is pending or processing
-    refetchInterval: (data) => {
+    refetchInterval: (query) => {
+      const data = query.state.data;
       if (!data) return false;
-      return ["pending", "processing"].includes(data.status.query?.state?.data?.status ?? data.status) ? 2000 : false;
+      return data.status === "pending" || data.status === "processing" ? 2000 : false;
     },
     staleTime: 0,
   });
